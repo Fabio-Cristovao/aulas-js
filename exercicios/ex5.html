@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // pedir ao utilizador para escrever um ano //
+
+        let anoEscolhido = Number(prompt("Escolha um ano?"));
+
+        // declarar uma variavel na qual se obtem o resultado da operaçao que permite verificar se o resto é zero ou decimal //
+
+        let resultado = anoEscolhido % 4;
+
+        // definir uma variavel para guardar o output e mostra lo no browser //
+
+        let ResFinal;
+
+        if (resultado == 0) {
+
+            ResFinal  = "O ano é bissexto";
+        }
+
+        else {
+            ResFinal = "O ano não é bissexto"
+        } 
+
+
+
+        
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = ResFinal;
+    </script>
+    
+</body>
+</html>

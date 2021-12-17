@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+    
+
+
+
+
+
+
+    <script>
+
+        // declarar tres variaveis, uma para o primeiro numero, outra para o segundo numero e uma terceira para o operador //
+
+        let num1 = Number(prompt("Escolha um número?"));
+
+        let num2 = Number(prompt("Escolha outro número?"));
+
+        let opnum = prompt("Escolha um operador numérico?");
+
+        // verificar atraves da estrutura de decisao if else ou switch quais os possiveis outputs: soma sub mul ou div dos numeros introduzidos pelo utilizador //
+
+        let resultado = ` O resultado da operação foi:`;
+
+        if (opnum == "+") {
+
+            resultado = num1 + num2;
+        }
+
+        else if (opnum =="-") {
+
+            resultado = num1 - num2;
+        }
+
+        else if (opnum == "*") {
+
+            resultado = num1 * num2;
+        }
+
+        else if (opnum == "/") {
+
+            resultado = num1 / num2;
+        }
+
+        else {
+
+            prompt("introduza um dos simbolos seguintes: +,-,* ou /");
+        }
+
+
+
+
+        
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

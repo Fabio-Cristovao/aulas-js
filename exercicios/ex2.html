@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // perguntar por dois numeros atraves do prompt //
+
+        primeiroNumero = Number(prompt("Escolha um número"));
+
+        segundoNumero = Number(prompt("Escolha um número"));
+
+        // definir variaveis para cada uma das operações //
+
+        soma = primeiroNumero + segundoNumero;
+
+        sub = primeiroNumero - segundoNumero;
+
+        mul = primeiroNumero * segundoNumero;
+
+        div = primeiroNumero / segundoNumero;
+
+        // definir uma variavel na qual é mostrado cada um dos resultados //
+
+        resultado = `
+        
+         <p>soma: ${soma}</p>
+         sub: ${sub}
+         mul: ${mul}
+         div: ${div}
+
+        `;
+
+
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+
+     
+
+
+
+
+    </script>
+    
+</body>
+</html>
