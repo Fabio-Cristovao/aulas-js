@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        //codigo para escrever html no section output
+
+        let valorP = Number(prompt("Qual o valor da sua prestação?"));
+
+        let juro = Number(prompt("Qual o juro associado à sua prestação, em percentagem?"));
+
+        let tempo = Number(prompt("Ha quantos meses deve a referida prestação?"));
+
+        let prestação = (valorP + (valorP* juro/100) * tempo);
+
+        let taxa = juro / 100;
+
+        let resultado = `
+        
+        O valor da sua prestação é ${prestação}, sabendo que o valor, por prestação em causa é: ${valorP} e que o juro associado é ${taxa} .
+
+        `;
+
+
+
+
+
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

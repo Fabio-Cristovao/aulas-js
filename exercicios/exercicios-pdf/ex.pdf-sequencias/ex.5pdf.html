@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // definição das variaveis necessárias ao calculo //
+
+        // tempo da viagem
+
+        let tempo = Number(prompt("Quanto tempo durou a viagem, em horas?"));
+
+        // conversao de horas para segundos // 
+
+        let convHorasSegundos = tempo * 3600;
+
+        // velocidade media da viagem //
+
+        let velMedia = Number(prompt("Qual a velocidade média do seu percurso, em km/h?"));
+
+        //conversao de km/h para m/s //
+
+        let convkmhtoms = ((velMedia*1000)/3600);
+
+        let distancia = velMedia * tempo;
+
+        consumo = distancia / 12;
+
+        let resultado = `
+        
+        <h2>A velocidade média do percurso foi: ${velMedia} km/h.</h2>
+
+        <h2> O tempo necessário para fazer o percurso foi de ${tempo} horas.</h2>
+
+        <h2>A distância percorrida no percurso foi de ${distancia} km.</h2>
+
+        <h2>O consumo do percurso foi de ${consumo} litros.</h2>
+
+        `;
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

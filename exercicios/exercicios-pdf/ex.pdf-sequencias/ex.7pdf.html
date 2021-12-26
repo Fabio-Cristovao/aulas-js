@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // escolha do valor da variável A //
+
+        let A = Number(prompt("Escolha um valor para o lado A"));
+
+        // escolha do valor da variável B //
+
+        let B = Number(prompt("Qual o valor do lado B"));
+
+        // definir a variável que fornece a variável dada em B identificada como A //
+
+        let altA = B;
+
+        // definir a variável que forence a variável dada em A identificada como B //
+
+        let altB = A;
+
+        let resultado =`
+        
+        <h4>O valor da variável A é: ${altA}.</h4>
+
+        <h4>O valor da variável B é: ${altB}</h4>
+        
+        `
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

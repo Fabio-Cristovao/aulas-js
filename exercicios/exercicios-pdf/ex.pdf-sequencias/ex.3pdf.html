@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+    <script>
+
+        // Definir a variavel que vai guardar o pedido de temperatura em ºF ao utilizador da webpage //
+
+
+        let Fahrenheit = Number(prompt("Escolha uma temperatura em ºF"));
+
+        // definir a variavel que vai guardar o resultado da equação.
+
+        let celcius = (Fahrenheit-32) * (5/9);
+
+        // expressao disponibilizada ao utiliazdor assim que é calculada a temperatura em graus celsius.
+
+        let resultado = `
+        
+        O resultado, em graus Celcius é: ${celcius}.
+
+        `;
+
+        
+
+
+
+        
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

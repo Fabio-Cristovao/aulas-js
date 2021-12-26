@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // pedido ao utilizador de um raio para a circunferencia da lata de óleo //
+
+
+        let raio = Number(prompt("Defina um raio para a lata de óleo"));
+
+        // pedido ao utilizador de um valor para a altura da lata de óleo //
+
+        let Altura = Number(prompt("Escolha a altura para a lata de óleo"));
+
+        // calculo do volume //
+
+        let volume = Math. PI * (raio * raio) * Altura;
+
+        // definiçao da variavel que guarda o valor do calculo do volume e o apresenta ao utilizador //
+
+        let resultado = `
+        
+        O resultado para o volume da lata de óleo dado o raio: ${raio} e a altura: ${Altura} é: ${volume}.
+        
+        `
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>
