@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        let arr = [];
+
+        // for loop para formar uma array de variáveis numéricas //
+
+        for(let i = 0; i < 4; i++) {
+
+            arr.push(Number(prompt("Escolha um número")));
+        }
+
+        // função que faz return de uma array com todos os numero introduzidos que ao serem divididos por 2 e por 3 o resultado tem resto 0 //
+
+        function div3(resto) {
+
+            return resto % 3 === 0 && resto % 2 === 0;
+                   
+        };
+
+
+        // variável que guarda a array com os valores divisiveis por 2 e por 3 em simultaneo //
+
+        let filtered = `Os números introduzidos divisíveis por 2 e por 3 são os seguintes:  ${arr.filter(div3)}`;
+
+    
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML =  filtered;
+        
+    </script>
+    
+</body>
+</html>

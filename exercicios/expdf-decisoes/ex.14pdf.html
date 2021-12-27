@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        mensagem = "";
+
+            // declaraçaão das variáveis nas quais vão ficar guardadas as 5 notas do aluno //
+
+        let nota1 = Number(prompt("introduza o resultado do teste numa escala de 0 a 10"));
+
+        let nota2 = Number(prompt("introduza o resultado do teste numa escala de 0 a 10"));
+
+        let nota3 = Number(prompt("introduza o resultado do teste numa escala de 0 a 10"));
+
+        let nota4 = Number(prompt("introduza o resultado do teste numa escala de 0 a 10"));
+
+        let nota5 = Number(prompt("introduza o resultado do teste numa escala de 0 a 10"));
+
+        // estrutura de decisão que permite dar ao utilizador a média do aluno e uma mensagem de aprovação e outra de reprovação, consoante o resultado da média //
+
+        switch (mensagem) {
+
+            case nota1 < 0 || nota1 > 10 :
+
+            mensagem = `<h2>Introduza um valor entre 0 e 10. Obrigado.</h2>`;
+
+            break;
+
+            case nota2 < 0 || nota2 > 10 :
+
+            mensagem = "default";
+
+            break;
+
+            case nota3 < 0 || nota3 > 10 :
+
+            mensagem = "Introduza um valor entre 0 e 10. Obrigado.";
+
+            break;
+
+            case nota4 < 0 || nota4 > 10 :
+
+            mensagem = "Introduza um valor entre 0 e 10. Obrigado.";
+
+            break;
+
+            case nota5 < 0 || nota5 > 10 :
+
+            mensagem = "Introduza um valor entre 0 e 10. Obrigado.";
+
+            break;
+
+            default:
+
+            mensagem = "introduza um valor válido.";
+
+        }
+
+        // variável que guarda o valor da média //
+
+        let média = ((nota1 + nota2 + nota3 + nota4 + nota5) / 5);
+
+            
+        if (média  >= 5) {
+
+            mensagem = `
+            
+            O aluno foi aprovado. O resultado da sua média foi: ${média}.
+            
+            `
+
+        } else if (média <= 5) {
+
+            mensagem = `
+            
+            O aluno foi reprovado. O resultado da sua média foi ${média}.
+            
+            `
+        } else {
+
+            mensagem = "Por favor introduza valores núméricos de 0 a 10. Obrigado."
+        }
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = mensagem;
+    </script>
+    
+</body>
+</html>

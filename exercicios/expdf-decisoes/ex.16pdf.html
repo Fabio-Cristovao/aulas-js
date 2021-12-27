@@ -17,12 +17,29 @@
 
     <script>
 
+       // declaração da variável que vai guardar os numeros fornecidos pelo utilizador sob a forma de uma array // 
+
+    let arr = [];
+
+    // for loop para a recolha dos números escolhidos pelo utilizador //
+
+    for(let i = 0; i < 3; i++)
+    arr.push(prompt("Enter a number"));
+
+    // função que coloca os números por ordem crescente //
+
+    arr.sort();
+
+    let mensagem = `
+    
+    Os números por ordem crescente ficam: ${arr}.`
+
         
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = "<h2> ola universo....</h2>";
+        output.innerHTML = mensagem;
     </script>
     
 </body>

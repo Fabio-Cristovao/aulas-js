@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        // variável na qual vai ficar guardada a diferente resposta para cada um dos casos de resultado de média possiveis
+
+        let mensagem = "";
+
+        // pedido ao utilizador para a instrodução de dois valores de notas de testes //
+
+       let teste1 = Number(prompt("Por favor, insira a nota do seu primeiro teste"));
+
+        let teste2 = Number(prompt("Por favor, insira a nota do seu segundo teste"));
+
+        // média de testes //
+
+        let médiaTestes = (teste1 + teste2) / 2;
+
+        // estrutura de decisão para dois casos distintos: maior ou igual a 7, ou menor que 7
+
+        if (médiaTestes >= 7) {
+
+            mensagem = `O aluno foi aprovado. A média dos seus testes foi de: ${médiaTestes}.`
+        }
+
+        // caso o valor da média seja inferior a 7, novo pedido ao utilizador de uma nova nota de exame. definição de uma variável que guarde o valor da media dos testes com a nota de exame //
+
+        else if (médiaTestes < 7) {
+
+            let notaExame = Number(prompt("Por favor insira a nota do seu exame"))
+
+            // media dos testes e dda nota de exame //
+
+
+            let somaExame = (médiaTestes + notaExame) / 2;
+
+            // apresentação de uma nova extrutura de decisão para dois casos media moir ou igual a 5 e menor que 5 e print da mensagem com a informação da media e se o aluno foi ou nao aprovado //
+
+            if (somaExame >= 5) {
+
+                mensagem = `
+                
+                A sua média de nota de exame e notas de testes foi de: ${somaExame}. O aluno foi aprovado.
+                
+                ` 
+            }
+ 
+            else if (somaExame < 5) {
+
+                mensagem = `
+                
+                A sua média de nota de exame e notas de teste foi de ${somaExame}. O Aluno foi reprovado
+                
+                `
+            }
+        }
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = mensagem;
+    </script>
+    
+</body>
+</html>
