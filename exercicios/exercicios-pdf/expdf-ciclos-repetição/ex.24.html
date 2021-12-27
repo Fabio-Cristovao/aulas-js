@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        /* o que acontece em cada loop: um numero escolhido pelo utilizador ex: 5 é utilizado na expressao 1 * 5 = 5, no segundo loop o i passa a ser 4 (i-1, como definido no loop). assim o resultado passa a ser total = 5 (do resultado anterior) * 4 (i - 1), e assim sucessivamente ate ao valor 1, definido no inicio do loop. o operador *= representa a multiplicação de uma variável pelo valor à direita desse operador. Como se trata de um loop o valor da variável total vai assumindo os seguintes valores:
+
+        total = 5 (primeiro loop i = 5)
+        total = 20 (segundo loop i = 4, total = 5 * 4 = 20
+        total = 60 (terceiro loop i = 3, total = 20 * 3 = 60
+        total = 120 (quarto loop i = 2, total = 60 * 2)
+
+        fim do loop
+
+        resultado final para a variável total = 120
+                */
+
+        
+
+
+        // usando o for loop // /
+
+    /*let inputNum = prompt("please enter and integer");
+    let total = 1;
+    for(i = inputNum; i > 1; i--){
+    total *= i; */
+
+    // usando o do ... while //
+
+    
+
+    let factorial = Number(prompt("Escolha um número inteiro"));
+
+    function factorize(factorial){
+   let result = 1;
+  while(factorial){
+     if (factorial == 0 || factorial == 1){
+        break;
+     }
+     // ?
+     factorial = factorial - 1;
+     console.log(result);
+  }
+
+  return result;
+}
+
+let resultado = result;
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+
+
+    </script>
+    
+</body>
+</html>
