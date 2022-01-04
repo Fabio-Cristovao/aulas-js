@@ -17,26 +17,19 @@
 
     <script>
 
-let inputNum = Number(prompt("please enter and integer"));
+        let num = Number(prompt("escolha um número inteiro"));
 
-let total = 1;
+        let fatorial = num;
 
-for(i = inputNum; i > 1; i--) {
-total *= i }
+        for (fatorial = num; num > 1; num--) {
 
+            fatorial *= num - 1;
+        }
 
-
-let resultado = `
-
-O resultado do factorial do número escolhido pelo utilizador: ${inputNum} é igual a ${total}.
-
-`
-
-
-        //codigo para escrever html no section output //
+        //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = "<h2> ola universo....</h2>";
+        output.innerHTML = fatorial;
     </script>
     
 </body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+<style>
+    section{
+
+        font-size: 2em;
+        color: green;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+/*
+        let num1 = Number(prompt("escolha um número"));
+        let num2 = Number(prompt("escolha um número"));
+
+        let total = [];
+        
+        
+        if (num1 > num2) {
+
+            let aux = num2;
+            num2 = num1 ;
+            num1 = aux;
+        }
+
+        for (let i = primeiro ; num1 <= num2 ; i++){
+
+            if (i % 2 == 0) {
+
+                    total.push(i);
+             }
+        }
+
+        
+    
+
+        let resultado = `A soma é: ${total}`
+
+        */
+
+        // solução //
+
+        let num1 = Number(prompt("escolha um número"));
+        let num2 = Number(prompt("escolha um numero"));
+
+        let n1 = num1;
+        let n2 = num2;
+
+        let listaPares = "";
+
+        while (n1 > n2) {
+
+            if (n1 % 2 === 0){
+
+                listaPares +=`<br> ${n1}`;
+            }
+
+            n1++;
+        }
+
+        resultado = `
+        
+        <h2> numeros pares entre o numero ${num1} e o numero: ${num2}:</h2>
+        <p>${listaPares}</p>
+        
+        
+        `
+    
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

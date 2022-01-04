@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let num1 = Number(prompt("Escolha um número"));
+        let num2 = Number(prompt("Escolha outro número"));
+        let tentativas = 0;
+        let soma = 0;
+        let resultado = "";
+        let num1Antes = num1;
+
+        while (num1 > num2) {
+            alert("por favor insira o número menor primeiro");
+            num1 = Number(prompt("Escolha um número"));
+            num2 = Number(prompt("escolha outro número maior"));
+        }
+
+        while (num1 < num2) {
+            soma += num1;
+            tentativas++;
+            num1++;
+        }
+
+
+        resultado =
+            `A soma dos números inteiros intermédios é igual a: ${soma}. Foram somados ${tentativas} números.`
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>

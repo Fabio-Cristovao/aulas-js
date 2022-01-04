@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript-intro</title>
 </head>
+
 <body>
     <h1>Javascript template</h1>
     <section id="output">...</section>
 
 
-
-
-
-
     <script>
-
-let inputNum = Number(prompt("please enter and integer"));
-
-let total = 1;
-
-for(i = inputNum; i > 1; i--) {
-total *= i }
+        // quadrados dos numeros inteiros entre 15 e 200 //
 
 
 
-let resultado = `
+        let square = "";
+        let resultado = "";
 
-O resultado do factorial do número escolhido pelo utilizador: ${inputNum} é igual a ${total}.
+        for (let i = 15; i <= 200; i++) {
 
-`
+            square +=` ${i*i}<br>`;
+           
+        }
 
 
-        //codigo para escrever html no section output //
+
+
+
+
+        //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = "<h2> ola universo....</h2>";
+        output.innerHTML = ` <h3>A lista dos quadrados dos números inteiros entre 15 e 200 é igual a:</h3>
+                           <p>${square}</p>`
     </script>
-    
+
 </body>
+
 </html>

@@ -32,34 +32,30 @@
         
 
 
-        // usando o for loop // /
+        // usando o while //
 
-    /*let inputNum = prompt("please enter and integer");
-    let total = 1;
-    for(i = inputNum; i > 1; i--){
-    total *= i; */
+        let inputNum = Number(prompt("Escolha um número inteiro."));
 
-    // usando o do ... while //
+       let result = inputNum;
+
+        while (inputNum > 1) {
+
+            inputNum--;
+            result *= inputNum
+
+        };
+
+       
 
     
 
-    let factorial = Number(prompt("Escolha um número inteiro"));
+    let resultado = `
+    
+    O resultado do factorial do número escolhido pelo utilizador é igual a ${result}.
+    
+    `
 
-    function factorize(factorial){
-   let result = 1;
-  while(factorial){
-     if (factorial == 0 || factorial == 1){
-        break;
-     }
-     // ?
-     factorial = factorial - 1;
-     console.log(result);
-  }
-
-  return result;
-}
-
-let resultado = result;
+   
         
 
 
@@ -77,7 +73,7 @@ let resultado = result;
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = resultado;
+        output.innerHTML = resultado ;
 
 
     </script>

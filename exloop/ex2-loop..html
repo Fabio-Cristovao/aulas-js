@@ -25,6 +25,45 @@
 
     <script>
 
+        // tabuada //
+
+       let num1 = Number(prompt("escolha um número"));
+
+        let tabuada = "";
+        let tabuadaWhile = "";
+
+        for (let i = 1 ; i <= 10 ; i ++) {
+
+
+            tabuada += `${num1} x ${i} = ${num1*i} <br>`
+
+        }
+
+
+        let j = 1;
+        while (j <= 10)
+        tabuadaWhile += ` ${num1} x ${j} = ${num1*j} <br>`;
+        j++;
+
+        resultado = `
+        
+        <h3> Tabuada do numero ${num1}</h3>
+        <section> ${tabuada}</section>
+        <hr>
+        <section> ${tabuadaWhile}</section>
+        
+        `;
+
+        
+
+
+
+      
+
+
+
+        
+    
 
         //codigo para escrever html no section output
 

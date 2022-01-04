@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        let fatorial = "";
+        let num = "";
+
+        let request = prompt("Deseja calcular o fatorial de um número inteiro à sua escolha?");
+
+        while (request == "sim") {
+
+            fatorial = 1;
+          
+            let num = Number(prompt("Escolha um número inteiro"));
+
+            for (fatorial = num; num > 1; num--){
+
+                fatorial *= (num - 1);  
+            }
+
+            resposta = `
+            
+            O resultado do fatorial do número escolhido é igual a ${fatorial}.
+            
+            ` 
+
+           request = prompt("Deseja continuar?");
+
+
+
+
+        }
+
+     resposta = "Obrigado e até breve!"
+
+       /* if (resposta == "sim"){
+
+            let num = Number(prompt("Escolha um número inteiro"));
+
+            fatorial = num;
+
+            for(fatorial = num; num > 1; num--){
+
+                fatorial *= (num - 1);   
+            }
+
+            let resposta = prompt("deseja continuar a calcular fatoriais");
+
+        } else {
+
+            resposta = "obrigado, até breve!"
+        }*/
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resposta;
+    </script>
+    
+</body>
+</html>
