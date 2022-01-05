@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript-intro</title>
-<style>
-    section{
+    <style>
+        section {
 
-        font-size: 2em;
-        color: green;
-    }
-
+            font-size: 2em;
+            color: green;
+        }
     </style>
 </head>
+
 <body>
     <h1>Javascript template</h1>
     <section id="output">...</section>
@@ -24,22 +25,30 @@
 
 
     <script>
+        //15 fatorial numbers //
 
-        let soma = 0;
         let resultado = "";
+        let fatorial = "";
 
-        for(let i = 1; i <= 100; i++)
-            soma = `${(i * (i + 1)) / 2}<br>`
-            
+        for (let i = 1; i <= 15; i++) {
 
-        resultado = `<h3>O resultado da soma de todos os números inteiros de 1 até 100 é igual a:</h3>
-                     <p>${soma}</p>`
+
+            if (i == 0 || i == 1) {
+                fatorial = 1
+            } else {
+                fatorial *= i;
+            }
+
+
+            resultado += `O fatorial de ${i}! é igual a ${fatorial}<br>`
+        }
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
         output.innerHTML = resultado;
     </script>
-    
+
 </body>
+
 </html>
