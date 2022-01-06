@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+<style>
+    section{
+
+        font-size: 2em;
+        color: green;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        let resultado = "";
+        let A = [];
+        let B = [];
+        let C = [];
+
+        for (let i = 1; i <= 15; i++){
+            let arrA = i;
+            A.push(arrA);
+        }
+
+        for(i = 16; i <= 30; i++){
+            let arrB = i;
+            B.push(arrB);
+        }
+
+      C = A.concat(B)
+
+      console.log(C)
+
+      resultado = `
+      
+      A array que resulta da junção da array A com a array B é igual a: ${C}
+      
+      `;
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>

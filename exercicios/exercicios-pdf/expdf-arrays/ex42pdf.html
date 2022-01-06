@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript-intro</title>
-<style>
-    section{
+    <style>
+        section {
 
-        font-size: 2em;
-        color: green;
-    }
-
+            font-size: 2em;
+            color: green;
+        }
     </style>
 </head>
+
 <body>
     <h1>Javascript template</h1>
     <section id="output">...</section>
@@ -24,8 +25,38 @@
 
 
     <script>
+        let arrA = [];
+        let arrB = [];
+        fatorial = [];
+        let result = "";
 
+        for (let i = 1; i <= 15; i++) {
+            if (i === 0 || i === 1) {
+                fatorial = 1
+            } else {
+                fatorial *= i
+            }
+            arrA.push(i)
+            arrB.push(fatorial)
+            fatorialString = fatorial.toString();
+            
+            result += `${i}! = ${fatorialString}<br>`
+
+        }
+
+        let resultado = `<p>Array A :</p>
+                         <h4> ${arrA}</h4>
+        <p>Array B, each factorial number from A array's elements:</p>
+        <h4>${result}</h4>`
         
+        
+
+
+
+
+
+        console.log(arrA);
+        console.log(arrB);
 
 
         //codigo para escrever html no section output
@@ -33,6 +64,7 @@
         let output = document.getElementById('output');
         output.innerHTML = resultado;
     </script>
-    
+
 </body>
+
 </html>
