@@ -35,11 +35,27 @@
 
         // gera um numero aleatorio inteiro entre 0 e 20  //
 
-        let numAl = Math.floor(Math.random() * 20);
+        // Math.random() - cria um numero entre 0 e 1; //
 
-        let tentativas = 1;
+        //Math.round() - metodo que arredonda o numero às unidades; //
+
+        // multiplicamos por 20 para gerar o numero inteiro entre 0 e 20;
+
+        // como criar um numero aleatorio entre 30 e 70? multiplicar pelo intervalo dos valores, neste caso 40
+        // no fim basta somar 0 + 30 para o inicio random ser sempre a partir de 30, e 0 + 70 
+        // formula: Math.round(Math.random() * (vf - vi) + vi) 
+
+        let resultado = "";
+
+
+        let numAl = Math.floor(Math.random() * 20);
+        console.log(numAl)
+
+        let numTentativas = 1;
 
         let num = Number(prompt("Escolha um número entre 0 e 20"));
+        let tries = [];
+        tries.push(num);
 
         while (numAl != num) {
 
@@ -47,7 +63,7 @@
 
                 alert("O seu numero esta abaixo do numero aleatorio");
 
-            } else if (num > numAl) {
+            } else {
 
                 alert("o seu numero esta acima do numero aleatorio");
 
@@ -55,15 +71,19 @@
 
             num = Number(prompt("Escolha outro numero"));
 
-            tentativas++;
+            numTentativas++;
+            tries.push(num);
         }
 
-        alert(`Agora acertou no número! em ${tentativas} tentativas.`)
+        alert(`Agora acertou no número! em ${numTentativas} tentativas.
+        As suas opções erradas anteriores foram: ${tries}.`)
+
+        resultado = `Parabéns! Você acertou no número aleatório ${numAl}, em ${numTentativas} tentativas. As suas tentativas foram as seguintes: ${tries}.`
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = numInteiroEntre0e20;
+        output.innerHTML = resultado;
     </script>
 
 </body>

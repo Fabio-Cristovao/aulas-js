@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+    <script>
+        let resultado = "";
+
+        let name = prompt("Please, insert your name.");
+
+        let numSubjects = Number(prompt("Please insert how many subjects are you substricted on?"));
+
+        let subjects = [];
+
+        let grades = [];
+
+        for (let i = 0; i < numSubjects; i++) {
+            let subject = prompt(`Please enter the name of the subject ${i+1}:`);
+            subjects.push(subject)
+
+            let grade = Number(prompt(`Please, insert the grade you got on ${subjects[i]}`));
+            grades.push(grade);
+        }
+
+        let sum = 0;
+
+        for (i = 0; i < grades.length; i++) {
+            sum += grades[i];
+        }
+
+        //console.log(sum);
+
+        let average = sum / grades.length;
+
+        if (average <= 9.5) {
+            let finalNote = `The student failed, and the average of his course was: ${average}.`
+        } else if
+            (average > 9.5) {
+                finalNote = `Congratulations! The student was approved, and his average was: ${average}.`
+            }
+
+        let gradeShow = ""; 
+
+            for (i = 0; i < grades.length; i++)
+        gradeShow += `At the subject ${subjects[i]}, the student got the following grade: ${grades[i]}.<br>`    
+        
+
+        // console.log(grades)
+        // console.log(subjects)
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = `
+        <h3>The student's name is ${name}.</h3>
+        <p>${gradeShow}</p>
+        <p>${finalNote}</p>`;
+    </script>
+
+</body>
+
+</html>

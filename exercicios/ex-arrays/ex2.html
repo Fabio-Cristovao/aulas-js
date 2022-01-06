@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let nomeAluno = prompt("Qual é o seu nome?");
+
+        let numDisciplinas = Number(prompt("Quantas disciplinas está a frequentar?"));
+
+        let disciplinas = [];
+
+        let notasDisciplinas = [];
+
+        for (let i = 0; i < numDisciplinas; i++) {
+
+            let nomeDisciplina = prompt(`A ${i + 1} ª disciplina é:`);
+
+            disciplinas.push(nomeDisciplina);
+
+            let notaDisciplina = Number(prompt(`Qual a nota à disciplina: ${disciplinas[i]}`));
+
+            notasDisciplinas.push(notaDisciplina);
+
+        }
+
+        apresentaçãoNotas = "";
+
+        for (let i = 0; i < disciplinas.length; i++) {
+
+            apresentaçãoNotas +=
+                `<h5> À disciplina ${disciplinas[i]}, o aluno obteve a nota ${notasDisciplinas[i]}.</h5>`;
+        }
+
+        //console.log(disciplinas);
+        //console.log(notasDisciplinas);
+
+
+        listaMédia = notasDisciplinas.toString();
+
+        /*let média = 0;
+
+        let calcMedia = 0;
+
+        for (let i = 0; i < listaMédia.length; i++) {
+           calcMedia += parseInt(listaMédia[i]);
+        }
+
+        média = calcMedia / listaMédia.length; */
+
+        let sum = 0;
+        for (let i = 0; i < notasDisciplinas.length; i++) {
+            sum += notasDisciplinas[i]; //don't forget to add the base
+        }
+
+        let avg = sum / notasDisciplinas.length;
+
+        let resultado = `
+        
+        <h3>O nome do aluno é: ${nomeAluno}.</h3>
+        <p>${apresentaçãoNotas}</p>
+        <p> A média do aluno foi igual a: ${avg}.</p>
+        
+        `;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let formandos = [];
+
+
+
+
+        formandos[0] = "Miguel";
+        formandos[1] = "Gonçalo";
+        formandos[2] = "John Doe";
+
+        let formandas = ["Mafalda", "Maria", "Sofia"];
+
+        formandos.push("Frederico");
+
+        formandos.unshift("Paulo");
+
+        formandos.shift();
+
+        formandos.pop();
+
+        // console.log(formandos.length);
+
+        let alunos = formandos.concat(formandas);
+        // console.log(alunos);
+
+        let novosAlunos = [...formandos, "Joaquim", ...formandas, "Manuel"];
+        console.log(novosAlunos);
+
+
+        // outro possivel resultado = novosAlunos.pop();
+
+        //resultado = novosAlunos[novosAlunos.length - 1];
+
+        // iterar pela array, e mostrar cada elemento da array //
+
+        /*for (let i = 0; i < novosAlunos.length; i++) {
+            resultado += `<p> ${novosAlunos[i]} </p>`;
+        }*/
+
+        let resultado ="";
+
+        for (const aluno of novosAlunos){
+            resultado += `<p> ${aluno} </p>`; 
+        }
+
+        
+
+
+
+
+
+
+        console.log("Formandos: ", formandos);
+        console.log("Formandas: ", formandas);
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>

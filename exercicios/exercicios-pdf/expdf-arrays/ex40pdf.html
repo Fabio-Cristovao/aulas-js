@@ -25,22 +25,30 @@
 
     <script>
 
-        let arr = [];
-        for (let i = 0; i <= 10; i++){
-            arr.push(i);
+        let A = [];
+        let B = [];
+        let C = [];
+
+        for (let i = 0; i <= 20; i++){
+            A.push(i);
+
+            B.push(2*i);
+
+            C.push(2*i - i);
         }
 
-
-
+        
         
 
-        
+
+
+
 
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = arr;
+        output.innerHTML = `A sequência correspondentes à subtração dos elementos correspondentes de B e A é igual a: ${C}`;
     </script>
     
 </body>

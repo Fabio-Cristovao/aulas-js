@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let numAlunos = Number(prompt("Quantos alunos tem a turma?"))
+
+        let alunos = [];
+
+        let resultado = "";
+
+
+        for (let i = 0; i < numAlunos; i++) {
+
+            let aluno = prompt(`nome do ${i + 1} alunos?`);
+            alunos.push(aluno);
+
+        }
+
+        console.log(alunos);
+
+
+
+        for (aluno of alunos) {
+            resultado += `<p> ${aluno}</p>`;
+        }
+
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>

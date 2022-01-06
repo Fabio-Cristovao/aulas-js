@@ -25,22 +25,31 @@
 
     <script>
 
-        let arr = [];
-        for (let i = 0; i <= 10; i++){
-            arr.push(i);
+        let arrA = [];
+        let arrB = [];
+
+        for(let i = 0; i <= 8; i++){
+
+            arrA.push(i);
+
+            arrB.push(3*i)
+
+            
         }
 
-
+        resultado = `<h3>A primeira sequência é: ${arrA}.</h3>
+                     <h3>A segunda sequência é: ${arrB}.</h3>`
 
         
 
-        
+
+
 
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = arr;
+        output.innerHTML = resultado;
     </script>
     
 </body>
