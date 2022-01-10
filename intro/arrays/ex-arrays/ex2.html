@@ -12,6 +12,14 @@
             font-size: 2em;
             color: green;
         }
+
+        .aprovado {
+            color: green;
+        }
+
+        .reprovado {
+            color: red;
+        }
     </style>
 </head>
 
@@ -24,7 +32,12 @@
 
 
 
-    <script>
+    <script> 
+    
+    // variables definition
+
+    // declaração de variaveis
+
         let nomeAluno = prompt("Qual é o seu nome?");
 
         let numDisciplinas = Number(prompt("Quantas disciplinas está a frequentar?"));
@@ -32,6 +45,10 @@
         let disciplinas = [];
 
         let notasDisciplinas = [];
+
+        let somaNotas = 0;
+
+        //logica para o meu algoritmo
 
         for (let i = 0; i < numDisciplinas; i++) {
 
@@ -42,6 +59,8 @@
             let notaDisciplina = Number(prompt(`Qual a nota à disciplina: ${disciplinas[i]}`));
 
             notasDisciplinas.push(notaDisciplina);
+
+            somaNotas += notaDisciplina;
 
         }
 
@@ -57,7 +76,7 @@
         //console.log(notasDisciplinas);
 
 
-        listaMédia = notasDisciplinas.toString();
+        
 
         /*let média = 0;
 
@@ -69,12 +88,9 @@
 
         média = calcMedia / listaMédia.length; */
 
-        let sum = 0;
-        for (let i = 0; i < notasDisciplinas.length; i++) {
-            sum += notasDisciplinas[i]; //don't forget to add the base
-        }
+        // outputs
 
-        let avg = sum / notasDisciplinas.length;
+        let avg = somaNotas / notasDisciplinas.length;
 
         let resultado = `
         

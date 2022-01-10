@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+    <script src="../biblioteca/helpers.js"></script>
+    <script>
+        resultado = "";
+
+        // sctipt para criar numeros aleatorios do euromilhoes
+
+        // inputs
+
+        // gerar 5 numeros aleatorios de 1 a 50
+
+        let numArray = [];
+
+        for (let i = 0; i < 5; i++) {
+            let num = randomNum(1, 50);
+
+            numArray.push(num);
+
+        }
+
+        numArray.sort();
+
+        // gerar 2 numeros aleatorios no intervalo de 1 ate 12,
+
+        let starArray = [];
+
+        for (let i = 0; i < 2; i++) {
+            let star = randomNum(1, 12);
+
+            starArray.push(star);
+        }
+
+        starArray.sort();
+
+        let userNumArray = [];
+
+        // pedir 5 numeros entre 1 e 50 ao utilizador;
+
+        for (let i = 0; i < 5; i++) {
+            let userNum = Number(prompt(
+                `Sorteio euromilhões! Por favor, escolha um número de 1 a 50. ${i + 1}º número:`));
+
+            userNumArray.push(userNum);
+        }
+
+        userNumArray.sort();
+
+        let userStarArray = [];
+
+        // pedir ao utilizador duas estrelas entre 1 e 12;
+
+        for (let i = 0; i < 2; i++) {
+            let userStar = Number(prompt(
+                `Escolha uma estrela, com um número entre 1 e 12,correspondente à ${i + 1}ª estrela:`));
+
+            userStarArray.push(userStar);
+        }
+
+        userStarArray.sort();
+
+        // loop para iterar as arrays de numeros random e numeros de utilizador para procurar numeros iguais e guardar esses valores numa nova array;
+
+        let equalNum = [];
+
+        for (let i = 0; i < 5; i ++){
+            if ( numArray[i] === userNumArray[i]){
+                equalNum.push(numArray[i]);
+            }
+        }
+
+        let equalStar = [];
+
+        for (let i = 0; i < 2; i ++){
+            if (starArray[i] === userStarArray[i]){
+                equalStar.push(starArray[i]);
+            }
+        }
+
+        // apresentar o resultado, mostrando os numeros e estrelas escolhidos pelo utilizador que correspondem a chave aleatoria criada;
+
+        if (equalNum.length === 0 && equalStar.length === 0){
+            resultado = "Temos pena, mas desta vez não acertou em nenhum número, nem em nenhuma estrela... Tente novamente!"
+        }
+
+        else if (equalNum.length !== 0 && equalStar.length === 0){
+            resultado = `Parabéns! Acertou em ${equalNum.lenght} números: ${equalNum}.`
+        }
+
+        else if (equalNum.length === 0 && equalStar.length !== 0){
+            resultado = `Parabéns! Acertou em ${equalStar.length} estrelas: ${equalStar}`
+        }
+
+        else if (equalNum.length !== 0 && equalStar.length !== 0){
+            resultado = `Parabéns! Acertou em ${equalNum.length} números: ${equalNum} e ${equalStar.length} estrelas: ${equalStar}.`
+        }
+
+        let answer = `<h2>A chave para o sorteio do euromilhões é:</h2>
+        <h4>Números: ${numArray}</h4>
+        <h4>Estrelas: ${starArray}</h4>
+        <hr>
+        <h2>O seu palpite foi:
+            <p>Números: ${userNumArray}</p>
+            <p>Estrelas: ${userStarArray}</p>
+            
+            <h6>${resultado}</h6>`
+
+        // console.log(randomNum);
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = answer;
+    </script>
+
+</body>
+
+</html>

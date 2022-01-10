@@ -25,37 +25,36 @@
 
 
     <script>
-        let numAlunos = Number(prompt("Quantos alunos tem a turma?"))
+        let A = [];
+        let B = [];
+        let C = [];
 
-        let alunos = [];
-
-        let resultado = "";
-
-
-        for (let i = 0; i < numAlunos; i++) {
-
-            let aluno = prompt(`nome do ${i + 1} alunos?`);
-            alunos.push(aluno);
-
+        for (let i = 0; i < 5; i++) {
+            let arrA = i;
+            A.push(arrA);
+            let arrB = 5 + i;
+            B.push(arrB);
+            let arrC = 10 + i;
+            C.push(arrC)
         }
 
-        console.log(alunos);
+        let D = A.concat(B,C)
 
-
-
-        for (aluno of alunos) {
-            resultado += `<p> ${aluno}</p>`;
-        }
-
-
-
-
+        let result = `
+        <h4>O vetor A é: ${A}.</h4>
+        <h4>O vetor B é: ${B}.</h4>
+        <h4>O vetor C é: ${C}.</h4>
+        <h4>O vetor D é: ${D}.</h4>
+        <p>Sendo o vetor D a junção dos vetores A, B e C.</p>
+        
+        
+        `
 
 
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = resultado;
+        output.innerHTML = result;
     </script>
 
 </body>

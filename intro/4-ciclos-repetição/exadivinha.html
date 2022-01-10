@@ -22,9 +22,10 @@
 
 
 
-
-
+    <script src="../biblioteca/helpers.js"></script>
     <script>
+    
+
         // gera um numero aleatorio entre 0 e 1 //
 
 
@@ -47,13 +48,19 @@
 
         let resultado = "";
 
+       let vf = Number(prompt("limite superior do numero aleatório"));
+        let vi = Number(prompt("limite inferior do numero aleatório"));
 
-        let numAl = Math.floor(Math.random() * 20);
-        console.log(numAl)
+        let numAl = randomNum(vf,vi);
+        console.log(numAl);
+
+        resultado = `Numero ${numAl}`;
+
+       
 
         let numTentativas = 1;
 
-        let num = Number(prompt("Escolha um número entre 0 e 20"));
+        let num = Number(prompt(`Escolha um número inteiro entre ${vi} e ${vf}`));
         let tries = [];
         tries.push(num);
 
@@ -80,10 +87,13 @@
 
         resultado = `Parabéns! Você acertou no número aleatório ${numAl}, em ${numTentativas} tentativas. As suas tentativas foram as seguintes: ${tries}.`
 
+        
+        
+
         //codigo para escrever html no section output
 
         let output = document.getElementById('output');
-        output.innerHTML = resultado;
+        output.innerHTML = resultado
     </script>
 
 </body>

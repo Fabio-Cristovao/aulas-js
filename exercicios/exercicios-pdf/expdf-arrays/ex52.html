@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+<style>
+    section{
+
+        font-size: 2em;
+        color: green;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+
+        let A = [];
+        let B = [];
+        let arrB = [];
+
+        for ( let i = 1; i <= 12; i++){
+            let arrA = i;
+            A.push(arrA);
+
+            if (A[i] % 2 !== 0){
+               let arrB = A[i] * 2;
+            } else {
+                arrB = A[i]
+                
+            }
+
+            B.push(arrB)
+
+        }
+        
+        let result = `<h5>O vetor A = ${A}.</h5>
+                      <h5>O vetor B = ${B}.</h5>`
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = result;
+    </script>
+    
+</body>
+</html>

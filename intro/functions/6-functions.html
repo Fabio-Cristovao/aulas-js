@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+<style>
+    section{
+
+        font-size: 2em;
+        color: green;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+    <script src="intro/biblioteca/helpers.js"></script>
+    <script>
+
+        let resultado = "";
+
+        // FUNCTIONS
+
+        // functions simplest
+
+        // function declaration
+
+        function sayHello(){
+            console.log("............");
+            console.log("ola joao");
+            console.log("bem vindo");
+            console.log("ao javascript");
+        };
+
+        //sayHello();
+
+        // function expression
+
+        //let ola = function(){
+            // console.log("Ola da minha Function expression");
+        
+
+        //ola();
+
+        // functions with parameters
+
+        function sayHelloName (nome, apelido){
+            console.log("..........");
+            console.log(`Ola ${nome} ${apelido}`);
+            console.log("Bemvindo");
+            console.log("Ao javascript");
+        }
+
+        //sayHelloName("joao", "silva");
+        //sayHelloName("Maria", "Joaquina");
+      
+        // functions with parameters ES6 default values
+
+        function sayHelloName (nome="john", apelido="doe"){
+            console.log("..........");
+            console.log(`Ola ${nome} ${apelido}`);
+            console.log("Bemvindo");
+            console.log("Ao javascript");
+        }
+
+       /* sayHelloName("joao", "silva");
+        sayHelloName("Maria", "Joaquina");
+        sayHelloName();
+        sayHelloName("Jose");
+        sayHelloName(undefined, "Joaquina");*/
+
+        // functions que recebem parametros e devolvem resultados
+
+        /*function calcularArea(altura, largura){
+            let area = altura * largura;
+            return area;
+        }*/
+
+        console.log("Area: ", calcularArea(3,6));
+        console.log("Area: ", calcularArea(12,26));
+
+
+
+
+
+
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+    
+</body>
+</html>
