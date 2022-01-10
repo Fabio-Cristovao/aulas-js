@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let resultado = "";
+
+        let numeros = [1, 2, 3, 4, 5];
+
+        // criar uma nova array com os duplicados da array numeros 
+
+        let duplos = [];
+
+        for (let i = 0; i < numeros.length; i++) {
+            let duplo = (numeros[i] * 2);
+            duplos.push(duplo);
+        }
+
+        //console.log("numeros" , numeros);
+        //console.log("duplos" , duplos);
+
+        let triplos = numeros.map(num => num * 3);
+        //console.log("triplos" , triplos);
+
+        // array filter
+
+        let cervejas = ["Super Bock", "Guiness", "Heineken", "Carlsberg", "Sagres", "Cergal"];
+
+        let cervejasComSeteLetras = cervejas.filter(cervejas => cervejas.length > 7);
+
+        console.log("cervejas com 7 letras", cervejasComSeteLetras);
+
+        let cervejasSemCergal = cervejas.filter(cervejas => cervejas !== "Cergal");
+
+        console.log("cervejasSemCergal", cervejasSemCergal);
+
+        //  alguns metodos para arrays find(), every(), some(), reduce()
+
+        
+
+
+
+
+
+
+
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>
