@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let resultado = "";
+
+        // pedir 8 numeros ao utilizador
+
+        let arrA = [];
+
+        for (let i = 0; i < 8; i++) {
+            let userNum = Number(prompt("please, choose an integer."));
+
+            arrA.push(userNum);
+
+        }
+
+
+
+        // ordenar os numeros introduzidos pelo utilizador 
+
+        arrA.sort((a, b) => a - b);
+
+         console.log('arr', arrA);
+
+         //
+
+        // gerar um numero aleatorio 
+
+        let x = Math.floor(Math.random() * arrA.length);
+
+        console.log(arrA[x]);
+
+        // gerar uma array B que resulta do produto de cada elemento da array A
+
+        let arrB = arrA.map(num => num * 5);
+
+        // console.log(arrB)
+
+        // iterative function
+
+        let x = Number(prompt("please, choose an integer."));
+
+        let binarySearch = (arrB, x) => {
+
+            let start = 0,
+                end = arrB.length - 1;
+
+            // iterate while start dont meet end;
+
+            let mid = Math.floor((start + end) / 2);
+
+            // if the element is present on mid, return true;
+
+            if (arrB[mid] === x) return true;
+
+            // if the element is not on mid position. search left and right;
+
+            else if (arrA[mid] < x) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+
+            return false;
+
+        }
+
+
+
+        
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>

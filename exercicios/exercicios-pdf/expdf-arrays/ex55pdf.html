@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+    <script src="/intro/biblioteca/helpers.js"></script>
+    <script>
+        result = "";
+
+        /////////////////// 1ª abordagem! ////////////////
+
+        /* criar 20 numeros aleatórios atraves do generator
+
+        arrRandom = [];
+
+        for (let i = 0; i < 20; i++) {
+            let numAl = randomNum(1, 50);
+            arrRandom.push(numAl);
+        }
+
+        //console.log('numeros aleatorios', arrRandom);
+
+        // criar uma array com todos os numeros aleatorios que sao pares
+
+        let numPar = arrRandom.filter(num => num % 2 === 0);
+
+        // criar uma array com todos os numeros impares
+
+        let numImpar = arrRandom.filter(num => num % 2 !== 0);
+
+        //console.log('numeros pares', numPar);
+        //console.log('numeros impares', numImpar);
+
+        let arrNumPar = [];
+        let arrNumImpar = [];
+
+        // filtrar das arrays de numeros pares e impares apenas os primeiros 6 elementos de cada uma delas
+
+        arrNumPar = numPar.slice(0, 6);
+        arrNumImpar = numImpar.slice(0, 6);
+
+        //console.log(arrNumPar);
+        //console.log(arrNumImpar);
+
+        // criar uma nova array com todos os elementos pares e impares de cada uma das arrays
+
+        arrC = arrNumPar.concat(arrNumImpar);
+
+        console.log('vetor C', arrC);*/
+
+        ///////////////// 2ª abordagem! /////////////////
+
+        let arrPar = [];
+
+        // pedir ao utilizador 6 numero pares
+
+        for (let i = 0; i < 6; i++) {
+            let userNum = Number(prompt(`Por favor insira um número par. ${i + 1}º número:`));
+
+            while (userNum % 2 !== 0) {
+
+                userNum = Number(prompt("Esse número não é par, seu burro!. Insira um número par."))
+
+            }
+
+            arrPar.push(userNum);
+        }
+
+        // pedir ao utilizador 6 numeros impares
+
+        let arrImpar = [];
+
+        for (let i = 0; i < 6; i++) {
+            let userNum = Number(prompt(`Por favor insira um número ímpar. ${i + 1}º número:`));
+
+            while (userNum % 2 === 0) {
+
+                userNum = Number(prompt("Esse número não é ímpar, seu burro!. Insira um número ímpar."));
+
+            }
+
+            arrImpar.push(userNum);
+        }
+
+        // juntar todos os elementos numa nova array 
+
+        let arrC = [];
+
+        arrC = arrPar.concat(arrImpar);
+
+        result = `<h4>A array C resultante da junção da lista dos numeros pares com a lista dos numeros impares é: ${arrC}.</h4>`
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = result;
+    </script>
+
+</body>
+
+</html>

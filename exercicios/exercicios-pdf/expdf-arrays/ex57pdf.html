@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-intro</title>
+    <style>
+        section {
+
+            font-size: 2em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript template</h1>
+    <section id="output">...</section>
+
+
+
+
+
+
+    <script>
+        let resultado = "";
+
+        // pedir ao utilizador 12 numeros divisiveis por 2 e por 3
+
+        arr2and3 = [];
+
+        for (let i = 0; i < 12; i++) {
+            let userNum = Number(prompt(
+                `Please insert a number which division by 2 and 3 is an integer number. ${i + 1}º number`));
+
+            while (userNum % 2 !== 0 || userNum % 3 !== 0) {
+                userNum = Number(prompt(
+                    "The number you have inserted is not divisible by 2 and 3, dumbass!, Please insert a number which is divisible by 2 and 3."
+                    ));
+            }
+
+            //pushar each userNum to an array
+
+            arr2and3.push(userNum);
+        }
+
+        // get 10 numbers multiples of 5 from the user and store then in a nem array
+
+        let nonMult5 = [];
+
+        for (let i = 0; i < 12; i++) {
+            userNum = Number(prompt(`Please insert a number that is not multiple of 5. ${i +1}º number:`));
+
+            while (userNum % 5 === 0) {
+                userNum = Number(prompt(
+                    "That is a multiple of 5, dumbass! Please insert another number which is not a multiple of 5"
+                    ))
+            }
+
+            nonMult5.push(userNum);
+        }
+
+        // get all elements from both the last arrays and concat then in a nem C array
+
+        let arrC = [];
+
+        arrC = arr2and3.concat(nonMult5);
+
+        resultado = `<h5> a array C , contendo os elementos da array arr2and3 e mult5 é: ${arrC}`
+
+
+
+        //codigo para escrever html no section output
+
+        let output = document.getElementById('output');
+        output.innerHTML = resultado;
+    </script>
+
+</body>
+
+</html>
