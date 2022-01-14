@@ -2,7 +2,7 @@ let livro1 = {
     title: "Angular com typescript",
     author: "yakov fain",
     alreadyRead: true,
-    imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/angular.jpg"
+    imageUrl: "livros/angular.jpg"
 }
 
 let livro2 = {
@@ -67,8 +67,8 @@ for (const livro of livros) {
 
 let grid = document.querySelector("section.grid");
 
-livros.map( livro => {
-    grid.innerHTML +=` 
+livros.map(livro => {
+    grid.innerHTML += ` 
     
     <article>
         <h1>${livro.title}</h1>
@@ -81,4 +81,3 @@ livros.map( livro => {
 })
 
 let teste = false;
-
