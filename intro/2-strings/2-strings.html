@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <title>javascript-intro</title>
 
     <style>
-        .lindo{
+        .lindo {
             font-size: 2em;
             color: blueviolet;
         }
     </style>
 </head>
+
 <body>
     <h1>Javascript strings</h1>
     <section id="output">...</section>
@@ -23,7 +25,6 @@
 
 
     <script>
-
         let nome = "Joao";
 
         let apelido = 'Goncalves';
@@ -32,8 +33,8 @@
 
         let nomeCompleto = nome + " " + apelido; // concatenar //
 
-        nomeCompleto = "O meu nome é: " + nome + " " + apelido 
-        + " e tenho a nacionalidade " + nacionalidade;
+        nomeCompleto = "O meu nome é: " + nome + " " + apelido +
+            " e tenho a nacionalidade " + nacionalidade;
 
         nomeCompleto = "O meu nome é: <br />";
         nomeCompleto += nome;
@@ -52,16 +53,11 @@
 
         // "" `` '' todos servem para identificar strings //
 
-        let texto = nome-length;
+        let texto = nome - length;
         texto = nome.toUpperCase();
         texto = nome.charAt(2);
         texto = nome.indexOf("a");
 
-        
-
-
-
-        
 
 
 
@@ -69,7 +65,12 @@
 
 
 
-        
+
+
+
+
+
+
 
 
 
@@ -93,6 +94,7 @@
         let output = document.getElementById('output');
         output.innerHTML = texto;
     </script>
-    
+
 </body>
+
 </html>
