@@ -24,21 +24,23 @@ lista.appendChild(novoItemFim);
 
 // 2 - aplicar a class cool a todos os items da lista
 
-lista = document.querySelectorAll('li');
+let items = lista.querySelectorAll('li');
 
-for ( item of lista ) {
-    item.setAttribute('class', 'cool')   
+for ( item of items) {
+    item.classList.add('cool')  
 }
 
 // 3 - Acrescentar uma tag "span" dentro do "h2", com o numero de itens da lista
 
-let newTitleSpan = document.querySelector('h2');
+let title = document.querySelector('h2');
 
 let newSpan = document.createElement('span');
 
 newSpan.textContent = 'Olá mundo!';
 
-newTitleSpan.appendChild(newSpan);
+lista.previousElementSibling.appendChild(newSpan);
+
+
 
 
 
