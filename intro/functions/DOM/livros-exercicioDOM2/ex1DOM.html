@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>About Me</title>
+  
+</head>
+<body>
+
+  <h1>About Me</h1>
+  
+  <ul>
+    <li>Nickname: <span id="nickname"></span>
+    <li>Favorites:  <span id="favorites"></span>
+    <li>Hometown: <span id="hometown"></span>
+   </ul>
+
+   
+   
+
+   <script>
+
+       // estilizar o documento
+       
+       let format = document.querySelector('body');
+       format.setAttribute('style', 'color: green; background-color: yellow; font-size: 3em; font-weight: bold; text-align: center');
+
+       let titleBorder = document.querySelector('h1');
+       titleBorder.setAttribute('style', 'border: red 1px dotted; margin: auto;')
+
+       let nicknameColor = document.querySelector('#nickname');
+       nicknameColor.setAttribute('style', 'color: blue;')
+
+       let favoritesTextColor = document.querySelector('#favorites');
+       favoritesTextColor.setAttribute('style','color: red;')
+
+       let hometownTextColor = document.querySelector('#hometown');
+       hometownTextColor.setAttribute('style', 'color: brown;')
+
+       // escrever texto nas spans
+
+       let nickNameText = document.querySelector('#nickname');
+       nickNameText.textContent = 'FabioWebDev';
+
+       let favouritesText = document.querySelector('#favorites');
+       favouritesText.textContent = 'Play computer games.'
+
+       let hometownText = document.querySelector('#hometown');
+       hometownText.textContent = 'Lisbon';
+
+       // iterar por cada elemento li da ul e aplicar um style
+
+       let list = document.querySelectorAll('ul');
+
+       for (const item of list) {
+           item.setAttribute('style', 'list-style: none; font-size: 30px; color: purple; font-weight: 400; text-align: left; margin-left: 2%; margin-top: 3%;');
+       }
+
+       // acrescentar uma imagem no documento
+
+       let img = document.createElement('img');
+       img.src = 'evo.jpg';
+       let newImg = document.querySelector('ul');
+       newImg.insertBefore(img, newImg.firstElementChild);
+       img.setAttribute('width', '500px');
+       img.setAttribute('height', 'auto');
+       img.setAttribute('style', 'margin-top: 30px; margin-left: auto')
+
+       
+
+
+
+
+       
+       
+       
+
+       
+
+
+
+
+
+       
+
+
+      
+
+       
+
+   </script>
+  
+ </body>
+</html>

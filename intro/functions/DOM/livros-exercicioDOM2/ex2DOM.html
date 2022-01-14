@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Books</title>
+
+    <style>
+        h1 {
+            font-size: 3em;
+            color: green;
+            font-weight: bold;
+            padding-right: 0.5em;
+            margin-right: auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>A minha lista de Livros</h1>
+
+    <ul id="lista"></ul>
+
+    <script>
+        // criar uma li com os varios elementos pedidos
+
+        // criar a array de objetos 'livros'
+
+        let bookArray = [{
+                bookTitle: 'The HObbit',
+                bookAuthor: 'J. R. R. Tolkien',
+                alreadyRead: false,
+                image: 'imagens-livros/index4.jpg'
+            },
+            {
+                bookTitle: 'It',
+                bookAuthor: 'Stephen King',
+                alreadyRead: true,
+                image: 'imagens-livros/index1.jpg'
+            },
+            {
+                bookTitle: 'Frankestein',
+                bookAuthor: 'Mary Shelley',
+                alreadyRead: true,
+                image: 'imagens-livros/index2.jpg'
+
+            },
+            {
+                bookTitle: "Harry Potter and the Philosopher's stone",
+                bookAuthor: 'J. K. Rowling',
+                alreadyRead: false,
+                image: 'imagens_livros/index.jpg'
+            },
+            {
+                bookTitle: 'Os Lusíadas',
+                bookAuthor: 'Luís de Camões',
+                alreadyRead: true,
+                image: 'imagens-livros/index3.jpg'
+            }
+        ];
+
+        // identificar a ul
+
+        let lista = document.querySelector('#lista');
+
+        // iterar por cada elemento da array 
+
+
+
+        for (let livro of bookArray) {
+
+            if (livro.alreadyRead === true) {
+                livro.alreadyRead = `já leu esse livro`;
+            } else {
+                livro.alreadyRead = "Ainda não leu esse livro";
+            }
+
+            lista.innerHTML += `
+
+            <li> ${livro.bookTitle}, ${livro.bookAuthor}, ${livro.alreadyRead}</li>`
+            
+            
+            let img = document.createElement("img");
+            img.appendChild(lista);
+            img.setAttribute("src",'')
+
+           
+
+
+
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
