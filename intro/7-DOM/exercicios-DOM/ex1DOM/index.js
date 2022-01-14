@@ -2,14 +2,14 @@ let livro1 = {
     title: "Angular com typescript",
     author: "yakov fain",
     alreadyRead: true,
-    imageUrl: "livros/angular.jpg"
+    imageUrl: "/angular.jpg"
 }
 
 let livro2 = {
     title: "blockchain com js",
     author: "someone else",
     alreadyRead: false,
-    imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/blockchain.jpg"
+    imageUrl: "livros/blockchain.jpg"
 }
 
 //let livros = [livro1, livro2];
@@ -19,37 +19,37 @@ let livros = [{
         title: "Angular com typescript",
         author: "yakov fain",
         alreadyRead: true,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/angular.jpg"
+        imageUrl: "livros/angular.jpg"
     },
     {
         title: "blockchain com js",
         author: "someone else",
         alreadyRead: false,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/blockchain.jpg"
+        imageUrl: "livros/blockchain.jpg"
     },
     {
         title: "deep learning com js",
         author: "someone else",
         alreadyRead: false,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/deeplearning.jpg"
+        imageUrl: "livros/deeplearning.jpg"
     },
     {
         title: "joy of javascript",
         author: "someone else",
         alreadyRead: false,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/joj.jpg"
+        imageUrl: "livros/joj.jpg"
     },
     {
         title: "react hooks in action",
         author: "someone else",
         alreadyRead: false,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/blockchain.jpg"
+        imageUrl: "livros/blockchain.jpg"
     },
     {
         title: "blockchain com js",
         author: "someone else",
         alreadyRead: false,
-        imageUrl: "/intro/functions/DOM/livros-exercicioDOM2/livros/reacthooks.jpg"
+        imageUrl: "livros/reacthooks.jpg"
     }
 ];
 
