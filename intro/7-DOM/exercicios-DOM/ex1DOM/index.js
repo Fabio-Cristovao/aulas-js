@@ -67,17 +67,29 @@ for (const livro of livros) {
 
 let grid = document.querySelector("section.grid");
 
-livros.map(livro => {
-    grid.innerHTML += ` 
-    
-    <article>
-        <h1>${livro.title}</h1>
-        <h2>${livro.author}</h2>
-        <img src="${livro.imageUrl}"/>
-        <p>Already Read: ${livro.alreadyRead ? '✓' : "💩" }</p>
-    </article>    
-    
-    `;
-})
+//mostrarLivros(livros);
 
-let teste = false;
+let livrosJaLidos = livros.filter(livro => livro.alreadyRead === true);
+
+//mostrarLivros(livrosJaLidos);
+
+let livrosNaoLidos = livros.filter(livro => livro.alreadyRead === false);
+
+// mostrarLivros(livrosNaoLidos);
+
+mostrarLivros(livros)
+
+function mostrarLivros(arrayLivros) {
+    arrayLivros.map(livro => {
+        grid.innerHTML += ` 
+        
+        <article>
+            <h1>${livro.title}</h1>
+            <h2>${livro.author}</h2>
+            <img src="${livro.imageUrl}"/>
+            <p>Already Read: ${livro.alreadyRead ? '✓' : "💩" }</p>
+        </article>    
+        
+        `;
+    })
+}
