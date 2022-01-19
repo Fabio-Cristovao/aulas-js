@@ -10,7 +10,27 @@
 
 // 2 esconder o botao quando o form esta aberto
 
-let toggleForm = () => {
+
+
+function modifyNumber() {
+
+    let allItems = document.querySelectorAll('li');
+
+    let numberElements = document.querySelector('#number');
+
+    let numberLi = allItems.length;
+
+    numberElements.textContent = numberLi;
+
+}
+
+modifyNumber();
+
+let buttonForm = document.querySelector('#showForm');
+
+buttonForm.addEventListener('click', toggleForm, false);
+
+function toggleForm() {
 
     let form = document.querySelector('#newItemForm')
 
@@ -27,6 +47,7 @@ let toggleForm = () => {
     } else {
         button.style.display = 'block'
     }
+
 }
 
 // 3 - escrevendo um novo produto e clicando no boto "Add", acrescentar novo item á lista, voltar a esconder o form e mostrar botao NovoItem
@@ -54,6 +75,48 @@ function addNewItem(e) {
 
     toggleForm();
 
+    modifyNumber();
+
 }
 
-4.
+/* 4.  - ao clicar num item, verificar se tem a class 'complete', se tiver eliminar o item, senao aplicar a class complete, e mover para o final da lista */
+
+let list = document.querySelector('ul');
+let items = list.querySelectorAll('li');
+
+console.log(list)
+
+//console.log(items)
+
+for (const item of items) {
+    item.addEventListener('click', removeItemIfHot, false);
+}
+
+function removeItemIfHot(e) {
+
+    e.preventDefault();
+
+    let itemEliminar = e.target;
+
+    if (itemEliminar.classList.contains('complete')) {
+        list.removeChild(itemEliminar);
+
+        modifyNumber();
+    } else {
+        itemEliminar.setAttribute('class', 'complete');
+
+        list.appendChild(itemEliminar);
+    }
+    let allItems = document.querySelectorAll('li');
+
+    let h2 = document.querySelector('h2');
+
+    h2.appendChild(total);
+
+    total.textContent = allItems.length;
+
+
+
+}
+
+// 5 - apresentar no H2, inserindo dentro de uma tag <span> o numero de items por comprar
