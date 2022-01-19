@@ -88,9 +88,7 @@ console.log(list)
 
 //console.log(items)
 
-for (const item of items) {
-    item.addEventListener('click', removeItemIfHot, false);
-}
+list.addEventListener('click', removeItemIfHot, false);
 
 function removeItemIfHot(e) {
 
@@ -102,20 +100,13 @@ function removeItemIfHot(e) {
         list.removeChild(itemEliminar);
 
         modifyNumber();
+
     } else {
-        itemEliminar.setAttribute('class', 'complete');
+
+        itemEliminar.classList.add('complete');
 
         list.appendChild(itemEliminar);
     }
-    let allItems = document.querySelectorAll('li');
-
-    let h2 = document.querySelector('h2');
-
-    h2.appendChild(total);
-
-    total.textContent = allItems.length;
-
-
 
 }
 
