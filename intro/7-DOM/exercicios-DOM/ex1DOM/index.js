@@ -16,36 +16,42 @@ let livro2 = {
 //console.log(livros)
 
 let livros = [{
+        id:0,
         title: "Angular com typescript",
         author: "yakov fain",
         alreadyRead: true,
         imageUrl: "livros/angular.jpg"
     },
     {
+        id:1,
         title: "blockchain com js",
         author: "someone else",
         alreadyRead: false,
         imageUrl: "livros/blockchain.jpg"
     },
     {
+        id:2,
         title: "deep learning com js",
         author: "someone else",
-        alreadyRead: false,
+        alreadyRead: true,
         imageUrl: "livros/deeplearning.jpg"
     },
     {
+        id:3,
         title: "joy of javascript",
         author: "someone else",
-        alreadyRead: false,
+        alreadyRead: true,
         imageUrl: "livros/joj.jpg"
     },
     {
+        id:4,
         title: "react hooks in action",
         author: "someone else",
         alreadyRead: false,
         imageUrl: "livros/blockchain.jpg"
     },
     {
+        id:5,
         title: "blockchain com js",
         author: "someone else",
         alreadyRead: false,
@@ -53,13 +59,54 @@ let livros = [{
     }
 ];
 
-console.log(livros)
+//console.log(livros)
 
-// iterar com for of
-for (const livro of livros) {
-    console.log(`${livro.title} ${livro.author}`);
+mostrarLivros(livros);
 
+// criar eventos para dar interatividade à paginando
+
+// filtrar os livros, por ja lidos ou não lidos
+
+let readCheckbox    = document.querySelector('#readBooks');
+let notReadCheckbox = document.querySelector('#notReadBooks');
+
+readCheckbox.addEventListener   ('change', readBooks, false);
+// notReadCheckbox.addEventListener('change', notReadBooks, false)
+
+function readBooks (e) {
+    readCheckbox.checked
+        e.preventDefault();
+        target = e.target.parentElement;
+        let livrosJaLidos = livros.filter(livro => livro.alreadyRead === true);
+        console.log(livrosJaLidos);
+        
+    
 }
+/* 
+function notReadBooks (e) {
+    e.target = e.target.parentElement;
+    e.preventDefault();
+    if (notReadCheckbox.checked) {
+        let livrosNaoLidos = livros.filter(livro => livro.alreadyRead === false);
+        mostrarLivros(livrosNaoLidos);
+    } else {
+        mostrarLivros(livros);
+    }
+} */
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
 
 // iterar com metodos de array
 
@@ -69,18 +116,17 @@ let grid = document.querySelector("section.grid");
 
 //mostrarLivros(livros);
 
-let livrosJaLidos = livros.filter(livro => livro.alreadyRead === true);
+
 
 //mostrarLivros(livrosJaLidos);
 
-let livrosNaoLidos = livros.filter(livro => livro.alreadyRead === false);
+
 
 // mostrarLivros(livrosNaoLidos);
 
-mostrarLivros(livros)
-
 function mostrarLivros(arrayLivros) {
     arrayLivros.map(livro => {
+        let grid = document.querySelector('.grid')
         grid.innerHTML += ` 
         
         <article>
@@ -88,6 +134,7 @@ function mostrarLivros(arrayLivros) {
             <h2>${livro.author}</h2>
             <img src="${livro.imageUrl}"/>
             <p>Already Read: ${livro.alreadyRead ? '✓' : "💩" }</p>
+            <button id=${livro.id}>Delete</button>
         </article>    
         
         `;

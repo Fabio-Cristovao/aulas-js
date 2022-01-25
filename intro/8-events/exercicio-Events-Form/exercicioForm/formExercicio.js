@@ -67,7 +67,7 @@ function addNewItem(e) {
     let newItem = document.createElement('li')
     newItem.textContent = itemDescription.value;
 
-    list.appendChild(newItem);
+    list.insertBefore(newItem, list.firstElementChild);
 
     let hideForm = document.querySelector('#newItemForm');
     let hideSubmit = document.querySelector('#addButton');
@@ -76,6 +76,8 @@ function addNewItem(e) {
     toggleForm();
 
     modifyNumber();
+
+    itemDescription.value = '';
 
 }
 
@@ -111,3 +113,5 @@ function removeItemIfHot(e) {
 }
 
 // 5 - apresentar no H2, inserindo dentro de uma tag <span> o numero de items por comprar
+
+ 
