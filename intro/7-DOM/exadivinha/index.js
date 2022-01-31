@@ -49,6 +49,8 @@ function numberCheck(userNum) {
 
     userNum = input.value;
 
+
+
     while (userNum !== numAl) {
 
         if (userNum < numAl) {
