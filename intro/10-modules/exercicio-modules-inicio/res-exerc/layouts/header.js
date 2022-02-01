@@ -1,0 +1,1 @@
+export let header = 'Content loaded';

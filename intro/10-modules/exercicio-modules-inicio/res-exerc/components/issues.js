@@ -1,0 +1,1 @@
+export let issues = 'Content loaded';
