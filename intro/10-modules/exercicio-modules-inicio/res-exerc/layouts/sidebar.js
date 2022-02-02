@@ -1,1 +1,1 @@
-export let sidebar = 'Content Loaded';
+export const sidebar = () => console.log('Content loaded sidebar');

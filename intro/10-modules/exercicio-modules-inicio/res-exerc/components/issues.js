@@ -1,1 +1,1 @@
-export let issues = 'Content loaded';
+export const issues = () => console.log('Content loaded issues');

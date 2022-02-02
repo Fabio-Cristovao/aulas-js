@@ -1,1 +1,1 @@
-export let users = 'Content loaded';
+export const users = () => console.log('Content loaded users');

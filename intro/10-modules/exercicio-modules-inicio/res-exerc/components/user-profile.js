@@ -1,1 +1,1 @@
-export let userProfile = 'Content loaded';
+export const userProfile = () => console.log('Content loaded user-profile');
