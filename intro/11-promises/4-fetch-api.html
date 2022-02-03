@@ -42,15 +42,15 @@
             fetch('users.json')
                 .then(response => response.json())
                 .then(data => {
-                    //console.log(data);
 
                     utilizadores = data;
                     mostrarUtilizadores();
 
+                    console.log(data);
+
                 })
 
                 .catch(err => info.textContent = 'erro ao carregar utilizadores');
-
 
             function mostrarUtilizadores() {
 
@@ -75,7 +75,6 @@
                 `
                 })
             }
-
         }
     </script>
 </body>

@@ -10,7 +10,7 @@
     <style>
         section.info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-auto-rows: 250px;
             gap: 3px;
         }
@@ -33,49 +33,78 @@
 
 
     <script>
-        let info = document.getElementById('info');
-
         document.addEventListener('DOMContentLoaded', init, false);
 
         function init() {
 
-            let utilizadores = [];
+            let info = document.getElementById('info');
 
-            fetch('https://randomuser.me/api/?results=30')
+            let users = [];
+
+
+            fetch('../pessoas.json')
                 .then(response => response.json())
                 .then(data => {
-
+                    //console.log(data);
                     users = data;
                     showFemaleUsers();
 
                 })
 
-                .catch(err => info.textContent = 'erro ao carregar utilizadores');
+            /* .catch(err => info.textContent = 'erro ao carregar utilizadores'); */
 
             function showFemaleUsers() {
 
-                utilizadores.map(user => {
+                //filtrar a array de objetos para obter apenas os objetos cujo gender = female;
 
-                        let {
-                            name,
-                            email,
-                            address: {
-                                city
+                //console.log(users);
+
+                let femaleUsers = users.filter(user =>
+                    user.gender === "female");
+
+                console.log(femaleUsers);
+
+                femaleUsers.map(user => {
+
+                    let {
+                        gender,
+                        name: {
+                            title,
+                            first,
+                            last
+                        },
+                        picture: {
+                            thumbnail
+                        },
+                        email,
+                        cell,
+                        location: {
+                            city,
+                            timezone: {
+                                description
                             }
-                        } = user;
-                    }
+                        },
 
-                    info.innerHTML = `
-                        
-                        <article>
-                    <h1> ${name}</h1>
-                    <h1> ${email}</h1>
-                    <h1> ${city}</h1>
-                    </article>
-            
-                        `
-                )
+                    } = user;
+
+                    info.innerHTML += `
+                     
+                 <article>
+                     <h1> ${gender}</h1>
+                     <h1> ${title, first, last}</h1>
+                     <img src='${thumbnail}'>
+                     <h1> ${email}</h1>
+                     <h1> ${cell}</h1>
+                     
+                     
+                 </article>
+
+                 `;
+                })
+
+                console.log(femaleUsers);
             }
+        }
     </script>
 </body>
 
