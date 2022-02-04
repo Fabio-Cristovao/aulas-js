@@ -8,16 +8,43 @@
     <title>exercicio</title>
 
     <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica;
+
+        }
+
         section.info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-auto-rows: 250px;
-            gap: 3px;
+            grid-auto-rows: 350px;
+            gap: 15px;
+            padding: 15px;
         }
 
         section.info article {
             border: 1px solid darkslategray;
             background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        section.info p {
+            margin: 5px;
+            text-align: center;
+        }
+
+        section.info img {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid white
+        }
+
+        section.info span {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -67,14 +94,12 @@
                 femaleUsers.map(user => {
 
                     let {
-                        gender,
                         name: {
-                            title,
                             first,
                             last
                         },
                         picture: {
-                            thumbnail
+                            large
                         },
                         email,
                         cell,
@@ -90,13 +115,11 @@
                     info.innerHTML += `
                      
                  <article>
-                     <h1> ${gender}</h1>
-                     <h1> ${title, first, last}</h1>
-                     <img src='${thumbnail}'>
-                     <h1> ${email}</h1>
-                     <h1> ${cell}</h1>
-                     
-                     
+                     <h1> ${first} ${last}</h1>
+                     <img src='${large}'>
+                     <p><span>E-mail:</span>  ${email}</p>
+                     <p> <span>Phone:</span> ${cell}</p>
+                     <p> <span>City:</span> ${city}, ${description}</p>   
                  </article>
 
                  `;
