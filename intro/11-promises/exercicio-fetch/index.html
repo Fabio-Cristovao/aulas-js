@@ -27,6 +27,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-radius: 8px;
 
         }
 
@@ -53,6 +54,15 @@
 <body>
 
     <h1>Posts</h1>
+    <!-- <label for=">Gender">Gender:</label>
+    <select name="gender" id="gender">
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+    </select> -->
+    <!-- <option value=""></option>
+    <option value=""></option>
+    <option value=""></option> -->
+
 
     <section id='info' class='info'>
 
@@ -64,16 +74,21 @@
 
         function init() {
 
+            //events
+
             let info = document.getElementById('info');
+            // let gender = document.querySelector('#gender');
 
             let users = [];
 
-
-            fetch('../pessoas.json')
+            fetch('https://randomuser.me/api/?results=30')
                 .then(response => response.json())
                 .then(data => {
                     //console.log(data);
-                    users = data;
+                    users = data.results;
+
+                    data.results = users;
+                    console.log(users)
                     showFemaleUsers();
 
                 })
@@ -90,7 +105,7 @@
                     user.gender === "female");
 
                 console.log(femaleUsers);
-
+                // for (const user of femaleUsers) {}
                 femaleUsers.map(user => {
 
                     let {
@@ -116,7 +131,7 @@
                      
                  <article>
                      <h1> ${first} ${last}</h1>
-                     <img src='${large}'>
+                     <img src='${large}' alt='${first} ${last}'>
                      <p><span>E-mail:</span>  ${email}</p>
                      <p> <span>Phone:</span> ${cell}</p>
                      <p> <span>City:</span> ${city}, ${description}</p>   

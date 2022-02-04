@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geolocation</title>
+</head>
+
+<body>
+
+    <h1>Geolocation </h1>
+
+    <button id='btn'>ler geolocalizacao</button>
+
+    <h2 id='latitude'>Latitude</h2>
+    <h2 id='longitude'>Longitude</h2>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', init, false);
+
+        function init() {
+
+            let btn = document.getElementById('btn');
+            let latitude = document.getElementById('latitude');
+            let longitude = document.getElementById('longitude');
+
+            btn.addEventListener('click', lerCoordenadas, false);
+
+            function lerCoordenadas() {
+
+                if ('geolocation' in navigator) {
+
+                    navigator.geolocation.getCurrentPosition(success, error);
+
+                    latitude.textContent = 'latitude: loading';
+
+                    longitude.textContent = 'longitude: loading';
+
+                } else {
+                    alert('o seu browsser nao tem acesso a geolocalizacao');
+                }
+
+                function success(position) {
+                    console.log(position);
+                    latitude.textContent = `latitude: ${position.coords.latitude}`
+                    longitude.textContent = `longitude: ${position.coords.longitude}`
+                }
+
+                function error(error) {
+                    console.log('ocorreu um erro');
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
