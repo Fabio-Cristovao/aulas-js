@@ -5,32 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UFO</title>
+
+    <style>
+      canvas {
+        background-color: bisque;
+      }
+
+      body {
+        text-align: center;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        padding: 1em;
+        margin: 1em;
+      }
+    </style>
   </head>
   <body>
     <h1>Canvas UFO</h1>
-    <canvas id="canvas" width="300" height="300"></canvas>
 
+    <p>press arrrowup or arrowright to accelerate</p>
+    <p>press arrowdown or arrowleft to decelerate</p>
+    <div class="content">
+      <button id="mais">+</button>
+      <button id="menos">-</button>
+      <canvas id="canvas" width="300" height="300"></canvas>
+    </div>
     <script>
       document.addEventListener("DOMContentLoaded", init, false);
-
       function init() {
-        let canvas = document.querySelector("#canvas");
+        let canvas = document.querySelector("canvas");
         let ctx = canvas.getContext("2d");
+
+        let mais = document.getElementById("mais");
+        let menos = document.getElementById("menos");
+
+        mais.addEventListener("click", acelerar, false);
+        menos.addEventListener("click", desacelerar, false);
+
+        window.addEventListener("keydown", changeSpeed, false);
+
         let ovni = new Image();
         let x = 50;
         let y = 0;
+        let acc = 3;
+
+        ovni.src = "../images/ufo.png";
+
+        setInterval(draw, 20);
+        // repetir, invocar um metodo em determinado intervalo de tempo;
 
         ovni.scr = "../images/ufo.png";
 
-        drawBackground();
+        function draw() {
+          drawBackground();
+          ctx.drawImage(ovni, x, y);
 
-        ctx.drawImage(ovni, x, y);
+          x += acc;
 
-        x += 5;
+          if (x > 301) {
+            x = -50;
+            y = Math.random() * 270;
+          }
 
-        if (x > 300) {
-          x = 50;
-          y = Math.random() * 270;
+          if (x < -51) {
+            x = 300;
+            y = Math.random() * 270;
+          }
+        }
+
+        function changeSpeed(e) {
+          console.log(e.key);
+          if (e.key == "ArrowUp" || e.key == "ArrowRight") {
+            acc += 4;
+          } else if (e.key == "ArrowDown" || e.key == "ArrowLeft") {
+            acc -= 4;
+          }
+        }
+
+        function acelerar() {
+          acc += 4;
+        }
+
+        function desacelerar() {
+          acc -= 4;
         }
 
         function drawBackground() {
