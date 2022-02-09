@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geolocation</title>
+
+    <style>
+      .map {
+        width: 90vw;
+        height: 300px;
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Geolocation</h1>
+
+    <button id="btn">ler geolocalizacao</button>
+
+    <h2 id="latitude">Latitude</h2>
+    <h2 id="longitude">Longitude</h2>
+
+    <section class="map" id="map"></section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", init, false);
+
+      let lat;
+      let lng;
+      let mapGoogle;
+
+      function init() {
+        let btn = document.getElementById("btn");
+        let latitude = document.getElementById("latitude");
+        let longitude = document.getElementById("longitude");
+        let map = document.getElementById("map");
+
+        btn.addEventListener("click", lerCoordenadas, false);
+      }
+
+      function lerCoordenadas() {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(success, error);
+
+          latitude.textContent = "latitude: loading";
+
+          longitude.textContent = "longitude: loading";
+        } else {
+          alert("o seu browsser nao tem acesso a geolocalizacao");
+        }
+
+        function success(position) {
+          lat = position.coords.latitude;
+          lng = position.coords.longitude;
+          console.log(position);
+          latitude.textContent = `latitude: ${lat}`;
+          longitude.textContent = `longitude: ${lng}`;
+
+          mapGoogle = new google.maps.Map(map, {
+            center: { lat, lng },
+            zoom: 14,
+          });
+
+          let marker = new google.maps.Marker({
+            position: { lat, lng },
+
+            title: "Hello World!",
+          });
+
+          marker.setMap(mapGoogle);
+        }
+      }
+
+      function error(error) {
+        latitude.textContent = `${error}`;
+      }
+    </script>
+
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYuL-KdC3LLYVtmCbdq5OyfgUbiWk4UDU&callback=lerCoordenadas"
+    ></script>
+  </body>
+</html>

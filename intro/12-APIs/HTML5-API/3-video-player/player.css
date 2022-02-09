@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  margin-top: 1em;
+}
+
+button {
+  width: 50px;
+  padding: 5px 12px;
+  background-color: lightgreen;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid darkgreen;
+  cursor: pointer;
+
+  transition: all 200ms ease-out;
+}
+
+button:hover {
+  background-color: rgb(16, 233, 16);
+  color: white;
+}

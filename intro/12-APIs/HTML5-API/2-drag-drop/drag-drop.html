@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>drag-drop</title>
+
+    <style>
+      .cesto {
+        width: 300px;
+        height: 360px;
+        border: 2px dashed gray;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>drag and drop API</h1>
+    <section class="items" id="items">
+      <img src="./bushmills.jpg" alt="" />
+      <img src="./bushmillsBlack.jpg" alt="" />
+    </section>
+    <section id="cesto" class="cesto"></section>
+    <section id="info" class="info"></section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", init, false);
+
+      function init() {
+        let items = document.getElementById("items");
+        let cesto = document.getElementById("cesto");
+        let info = document.getElementById("info");
+        let novoItem;
+
+        cesto.addEventListener("dragenter", prevent, false);
+        cesto.addEventListener("dragover", prevent, false);
+        items.addEventListener("dragstart", onDrag, false);
+        cesto.addEventListener("drop", onDrop, false);
+
+        function prevent(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+
+        function onDrag({ target }) {
+          console.log(target);
+          novoItem = target;
+        }
+
+        function onDrop() {
+          cesto.innerHTML += `
+          <img src="${novoItem.src}"/>
+          `;
+
+          info.textContent = `Items: ${
+            cesto.querySelectorAll("section.cesto img").length
+          }`;
+        }
+      }
+    </script>
+  </body>
+</html>
