@@ -58,5 +58,33 @@ section .volumeMeter {
 
 section label {
   text-align: center;
-  font-size: 25px;
+}
+
+section progress::-moz-progress-bar {
+  background-color: lightgreen;
+  border-radius: 10px;
+}
+
+section.currentTimeContainer {
+  height: 10px;
+  background-color: white;
+}
+
+div.currentTime {
+  height: 10px;
+  width: 0;
+  background-color: lightgreen;
+}
+
+section .videoDuration {
+  margin-left: auto;
+  font-size: 1em;
+  color: white;
+  background-color: lightgreen;
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 5px 20px;
+  text-align: center;
+  border-radius: 6px;
 }

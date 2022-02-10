@@ -29,9 +29,12 @@
         id="meterVolume"
       ></progress>
     </section>
-
-    <section id="player">
-      <video width="640" height="480" controls></video>
+    <section id="player" class="player">
+      <video width="640" height="480" type="video/mp4"></video>
+      <section class="currentTimeContainer" id="currentTimeContainer">
+        <div class="currentTime" id="currentTime"></div>
+      </section>
+      <div class="videoDuration" id="videoDuration">00:00/00:00</div>
     </section>
     <script type="module" src="./player.js"></script>
   </body>

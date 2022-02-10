@@ -8,12 +8,15 @@ function init() {
   let currentVideo = 0;
   video.src = `../media/${videos[currentVideo].url}`;
   video.volume = 0.5;
-  let meter = document.querySelector("section.volumeMeter");
   let meterProgress = document.querySelector("section progress");
   let meterLabel = document.querySelector("section label");
+  let currentTime = document.querySelector(".currentTime");
+  let videoDuration = document.getElementById("videoDuration");
+  let showTime = document.getElementById("showTime");
 
   //events
   controlBtns.addEventListener("click", comandosVideo, false);
+  video.addEventListener("timeupdate", showCurrentTime, false);
 
   //functions
 
@@ -57,6 +60,7 @@ function init() {
 
   function stopVideo() {
     video.load();
+    currentTime.style.width = 0;
   }
 
   function muteVideo() {
@@ -81,5 +85,25 @@ function init() {
     console.log(video.volume);
     video.volume -= 0.1;
     meterProgress.value = video.volume;
+  }
+
+  function showCurrentTime() {
+    let videoPosition = video.currentTime / video.duration;
+    currentTime.style.width = videoPosition * 100 + "%";
+    let showVideoTime = video.currentTime;
+
+    let duration = video.duration;
+    videoDuration.innerHTML = `${formatTime(showVideoTime)}/${formatTime(
+      duration
+    )}`;
+  }
+
+  // how to get the time values in this format: 00:00 / 00:00
+  function formatTime(showVideoTime) {
+    let m = Math.floor(showVideoTime / 60);
+    m = m >= 10 ? m : "0" + m;
+    showVideoTime = Math.floor(showVideoTime % 60);
+    showVideoTime = showVideoTime >= 10 ? showVideoTime : "0" + showVideoTime;
+    return m + ":" + showVideoTime;
   }
 }
