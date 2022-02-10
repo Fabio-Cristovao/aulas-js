@@ -15,12 +15,19 @@
       <button id="pauseBtn">pause</button>
       <button id="stopBtn">stop</button>
       <button id="muteBtn">mute</button>
-      <button id="maisBtn">maisBtn</button>
-      <button id="menosBtn">menosBtn</button>
+      <button id="maisBtn">+</button>
+      <button id="menosBtn">-</button>
     </nav>
 
-    <section>
-      <meter vw="90" min="0" max="1" value="0.5" id="meterVolume"></meter>
+    <section class="volumeMeter">
+      <label for="meterVolume">Volume:</label>
+      <progress
+        class="volumeMeter"
+        min="0"
+        max="1"
+        value="0.5"
+        id="meterVolume"
+      ></progress>
     </section>
 
     <section id="player">

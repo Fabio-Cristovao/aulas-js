@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial;
   display: flex;
@@ -21,7 +30,7 @@ nav {
 }
 
 button {
-  width: 50px;
+  width: 80px;
   padding: 5px 12px;
   background-color: lightgreen;
   margin: 10px;
@@ -35,4 +44,19 @@ button {
 button:hover {
   background-color: rgb(16, 233, 16);
   color: white;
+}
+
+section.volumeMeter {
+  display: flex;
+  flex-direction: column;
+}
+
+section .volumeMeter {
+  width: 640px;
+  margin: 10px;
+}
+
+section label {
+  text-align: center;
+  font-size: 25px;
 }

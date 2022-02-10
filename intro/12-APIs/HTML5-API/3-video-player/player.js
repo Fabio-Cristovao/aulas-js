@@ -8,6 +8,9 @@ function init() {
   let currentVideo = 0;
   video.src = `../media/${videos[currentVideo].url}`;
   video.volume = 0.5;
+  let meter = document.querySelector("section.volumeMeter");
+  let meterProgress = document.querySelector("section progress");
+  let meterLabel = document.querySelector("section label");
 
   //events
   controlBtns.addEventListener("click", comandosVideo, false);
@@ -58,19 +61,25 @@ function init() {
 
   function muteVideo() {
     if (video.muted === false) {
-      video.muted = "true";
-    } else {
+      video.muted = true;
+      meterProgress.value = 0;
+      meterLabel.textContent = "🔈";
+    } else if (video.muted === true) {
       video.muted = false;
+      meterProgress.value = video.volume;
+      meterLabel.textContent = "Volume:";
     }
   }
 
   function aumentarVolume() {
     console.log(video.volume);
     video.volume += 0.1;
+    meterProgress.value = video.volume;
   }
 
   function baixarVolume() {
     console.log(video.volume);
     video.volume -= 0.1;
+    meterProgress.value = video.volume;
   }
 }
