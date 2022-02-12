@@ -7,16 +7,22 @@ function init() {
   let video = document.querySelector("#player video");
   let currentVideo = 0;
   video.src = `../media/${videos[currentVideo].url}`;
+  console.log(video.src);
   video.volume = 0.5;
   let meterProgress = document.querySelector("section progress");
   let meterLabel = document.querySelector("section label");
   let currentTime = document.querySelector(".currentTime");
   let videoDuration = document.getElementById("videoDuration");
-  let showTime = document.getElementById("showTime");
+  let playNext = document.querySelector("#playNext");
 
   //events
   controlBtns.addEventListener("click", comandosVideo, false);
+
+  video.addEventListener("click", playAoVideo, false);
+
   video.addEventListener("timeupdate", showCurrentTime, false);
+
+  playNext.addEventListener("click", playNextVideo, false);
 
   //functions
 
@@ -106,4 +112,19 @@ function init() {
     showVideoTime = showVideoTime >= 10 ? showVideoTime : "0" + showVideoTime;
     return m + ":" + showVideoTime;
   }
+
+  function playNextVideo() {
+    if (currentVideo === 0) {
+      currentVideo = 1;
+      video.src = `../media/${videos[currentVideo].url}`;
+    } else if (currentVideo === 1) {
+      currentVideo = 0;
+      video.src = `../media/${videos[currentVideo].url}`;
+    }
+
+    stopVideo();
+    playAoVideo();
+  }
+
+  console.log(video.src);
 }
