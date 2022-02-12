@@ -14,15 +14,14 @@ function init() {
   let currentTime = document.querySelector(".currentTime");
   let videoDuration = document.getElementById("videoDuration");
   let playNext = document.querySelector("#playNext");
+  let canvas = document.querySelector("canvas");
+  let context = canvas.getContext("2d");
 
   //events
   controlBtns.addEventListener("click", comandosVideo, false);
-
-  video.addEventListener("click", playAoVideo, false);
-
   video.addEventListener("timeupdate", showCurrentTime, false);
-
   playNext.addEventListener("click", playNextVideo, false);
+  video.addEventListener("click", snapShot, false);
 
   //functions
 
@@ -51,6 +50,11 @@ function init() {
 
     if (botaoClicado.id === "menosBtn") {
       baixarVolume();
+    }
+
+    if (botaoClicado.id === "snapshot") {
+      snapShot();
+      console.log(botaoClicado.id);
     }
   }
 
@@ -104,15 +108,6 @@ function init() {
     )}`;
   }
 
-  // how to get the time values in this format: 00:00 / 00:00
-  function formatTime(showVideoTime) {
-    let m = Math.floor(showVideoTime / 60);
-    m = m >= 10 ? m : "0" + m;
-    showVideoTime = Math.floor(showVideoTime % 60);
-    showVideoTime = showVideoTime >= 10 ? showVideoTime : "0" + showVideoTime;
-    return m + ":" + showVideoTime;
-  }
-
   function playNextVideo() {
     if (currentVideo === 0) {
       currentVideo = 1;
@@ -126,5 +121,19 @@ function init() {
     playAoVideo();
   }
 
-  console.log(video.src);
+  function snapShot() {
+    canvas.width = 300;
+    canvas.height = 150;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(video, 0, 0, 640, 480);
+  }
+
+  // how to get the time values in this format: 00:00 / 00:00
+  function formatTime(showVideoTime) {
+    let m = Math.floor(showVideoTime / 60);
+    m = m >= 10 ? m : "0" + m;
+    showVideoTime = Math.floor(showVideoTime % 60);
+    showVideoTime = showVideoTime >= 10 ? showVideoTime : "0" + showVideoTime;
+    return m + ":" + showVideoTime;
+  }
 }
